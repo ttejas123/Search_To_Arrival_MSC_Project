@@ -1,0 +1,75 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model CollegeSchema {
+    id            String  @id @default(cuid())
+    college_name  String
+    state         String
+    college_city  String
+    logo          String
+    cover         String
+    rating        String
+    url           String
+    contact       String     
+    Cordinate     CordinateSchema[]
+    placements    placementsSchema[]
+    Facilities    facilitiesSchema[]
+    Faculty       facultySchema[]
+    courses       coursesSchema[]
+    baseCardCourseSchema baseCardCourseSchema[]
+}
+
+model CordinateSchema {
+    id            String  @id @default(cuid())
+    lat           String
+    lng           String
+    college       CollegeSchema[]
+}
+
+model placementsSchema {
+    id            String  @id @default(cuid())
+    company_name  String  @unique
+    company_image String
+    college       CollegeSchema[]
+}
+
+model facilitiesSchema {
+    id             String  @id @default(cuid())
+    facility_name  String  @unique
+    facility_image String
+    college        CollegeSchema[]
+}
+
+model facultySchema {
+    id            String  @id @default(cuid())
+    faculty_name  String
+    designation   String
+    exp           String
+    qualification String
+    college       CollegeSchema[]
+}
+
+model coursesSchema {
+    id              String  @id @default(cuid())
+    courses_name    String
+    short_head      String  @unique
+    type            String
+    duration        String
+    fees_per_year   String
+    eligibility     String
+    college         CollegeSchema[]
+}
+
+model baseCardCourseSchema {
+    id              String @id @default(cuid())
+    fee             String
+    short_form      String
+    name            String
+    college       CollegeSchema[]
+}
