@@ -17,7 +17,7 @@ const rateLimitterParams = {
     legacyHeaders: false, // Disable the `X-RateLimit-*` headers
 };
 exports.rateLimitterParams = rateLimitterParams;
-const API_KEY_SerpApi = "284858ab1e31d2664fff9cf1f7e26e035b2206d4f13f329e38ae4cce29e40933";
+const API_KEY_SerpApi = "<API_key>";
 exports.API_KEY_SerpApi = API_KEY_SerpApi;
-const API_KEY_OpenAI = "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"; //"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"
+const API_KEY_OpenAI = "<API_Key>";
 exports.API_KEY_OpenAI = API_KEY_OpenAI;

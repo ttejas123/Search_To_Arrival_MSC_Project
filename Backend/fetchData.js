@@ -5,7 +5,7 @@ const DataFromJson  = require("./FinalUpdates.json")
 const fs = require("fs")
 
 async function addLocation(colleges) {
-  const api_key = "AIzaSyCtAtFTYTpduPIXVcR4eMAnkSI_6hTnc7M";
+  const api_key = "<Google_API_Key>";
   const result = [];
   
   for (const college of colleges) {
